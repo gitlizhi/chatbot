@@ -1,0 +1,4 @@
+memory_db/
+outputs/
+temp_audio/
+.env

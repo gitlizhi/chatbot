@@ -1,0 +1,74 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="61">
+            <item index="0" class="java.lang.String" itemvalue="Django" />
+            <item index="1" class="java.lang.String" itemvalue="PyMySQL" />
+            <item index="2" class="java.lang.String" itemvalue="pytz" />
+            <item index="3" class="java.lang.String" itemvalue="django-cors-headers" />
+            <item index="4" class="java.lang.String" itemvalue="sqlparse" />
+            <item index="5" class="java.lang.String" itemvalue="tiktoken" />
+            <item index="6" class="java.lang.String" itemvalue="cyclopts" />
+            <item index="7" class="java.lang.String" itemvalue="docstring_parser" />
+            <item index="8" class="java.lang.String" itemvalue="langchain-tavily" />
+            <item index="9" class="java.lang.String" itemvalue="MarkupSafe" />
+            <item index="10" class="java.lang.String" itemvalue="sse-starlette" />
+            <item index="11" class="java.lang.String" itemvalue="frozenlist" />
+            <item index="12" class="java.lang.String" itemvalue="langchain-community" />
+            <item index="13" class="java.lang.String" itemvalue="rich-rst" />
+            <item index="14" class="java.lang.String" itemvalue="Authlib" />
+            <item index="15" class="java.lang.String" itemvalue="Pygments" />
+            <item index="16" class="java.lang.String" itemvalue="starlette" />
+            <item index="17" class="java.lang.String" itemvalue="certifi" />
+            <item index="18" class="java.lang.String" itemvalue="docutils" />
+            <item index="19" class="java.lang.String" itemvalue="mcp" />
+            <item index="20" class="java.lang.String" itemvalue="xxhash" />
+            <item index="21" class="java.lang.String" itemvalue="email-validator" />
+            <item index="22" class="java.lang.String" itemvalue="dnspython" />
+            <item index="23" class="java.lang.String" itemvalue="pydantic" />
+            <item index="24" class="java.lang.String" itemvalue="pyperclip" />
+            <item index="25" class="java.lang.String" itemvalue="Werkzeug" />
+            <item index="26" class="java.lang.String" itemvalue="cryptography" />
+            <item index="27" class="java.lang.String" itemvalue="openapi-spec-validator" />
+            <item index="28" class="java.lang.String" itemvalue="attrs" />
+            <item index="29" class="java.lang.String" itemvalue="openai" />
+            <item index="30" class="java.lang.String" itemvalue="pydantic_core" />
+            <item index="31" class="java.lang.String" itemvalue="propcache" />
+            <item index="32" class="java.lang.String" itemvalue="langsmith" />
+            <item index="33" class="java.lang.String" itemvalue="ormsgpack" />
+            <item index="34" class="java.lang.String" itemvalue="PyJWT" />
+            <item index="35" class="java.lang.String" itemvalue="langchain-openai" />
+            <item index="36" class="java.lang.String" itemvalue="isodate" />
+            <item index="37" class="java.lang.String" itemvalue="more-itertools" />
+            <item index="38" class="java.lang.String" itemvalue="jsonschema-path" />
+            <item index="39" class="java.lang.String" itemvalue="numpy" />
+            <item index="40" class="java.lang.String" itemvalue="typing-inspection" />
+            <item index="41" class="java.lang.String" itemvalue="httpx-sse" />
+            <item index="42" class="java.lang.String" itemvalue="langgraph-checkpoint" />
+            <item index="43" class="java.lang.String" itemvalue="exceptiongroup" />
+            <item index="44" class="java.lang.String" itemvalue="openapi-pydantic" />
+            <item index="45" class="java.lang.String" itemvalue="langgraph" />
+            <item index="46" class="java.lang.String" itemvalue="langgraph-prebuilt" />
+            <item index="47" class="java.lang.String" itemvalue="openapi-schema-validator" />
+            <item index="48" class="java.lang.String" itemvalue="pathable" />
+            <item index="49" class="java.lang.String" itemvalue="rich" />
+            <item index="50" class="java.lang.String" itemvalue="openapi-core" />
+            <item index="51" class="java.lang.String" itemvalue="parse" />
+            <item index="52" class="java.lang.String" itemvalue="python-multipart" />
+            <item index="53" class="java.lang.String" itemvalue="langgraph-sdk" />
+            <item index="54" class="java.lang.String" itemvalue="lazy-object-proxy" />
+            <item index="55" class="java.lang.String" itemvalue="fastmcp" />
+            <item index="56" class="java.lang.String" itemvalue="langchain-core" />
+            <item index="57" class="java.lang.String" itemvalue="aiohttp" />
+            <item index="58" class="java.lang.String" itemvalue="multidict" />
+            <item index="59" class="java.lang.String" itemvalue="yarl" />
+            <item index="60" class="java.lang.String" itemvalue="pdfminer.six" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
