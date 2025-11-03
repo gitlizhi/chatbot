@@ -1,9 +1,10 @@
 # 🤖 老年陪伴机器人 - AI Elderly Companion Robot
 一个基于人工智能的老年陪伴机器人系统，具备实时语音交互、长期记忆、声纹识别和个性化陪伴等功能。
 
-https://img.shields.io/badge/python-3.8%252B-blue
-https://img.shields.io/badge/license-MIT-green
-https://img.shields.io/badge/AI-Powered-orange
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![AI Powered](https://img.shields.io/badge/AI-Powered-orange)](https://your-project-url.com)
+
 
 # 🌟 项目特色
 ## 核心功能
