@@ -1,4 +1,4 @@
-# 🤖 老年陪伴机器人 - AI Elderly Companion Robot
+# 🤖 老年陪伴机器人 - AI chatbot
 一个基于人工智能的老年陪伴机器人系统，具备实时语音交互、长期记忆、声纹识别和个性化陪伴等功能。
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
