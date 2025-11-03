@@ -44,7 +44,7 @@ Python 3.10+
 ## 克隆项目
 
 ```python
-git clone https://github.com/your-username/elderly-companion-robot.git
+git clone https://github.com/gitlizhi/chatbot.git
 cd chatbot
 ```
 
