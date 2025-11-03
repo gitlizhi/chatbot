@@ -256,7 +256,7 @@ Fork本项目
 
 📧 Email: lizhi944254211@163.com
 
-💬 Issues: GitHub Issues
+💬 Issues: [GitHub Issues](https://github.com/gitlizhi/chatbot/issues)
 
 
 <div align="center">
