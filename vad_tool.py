@@ -428,7 +428,6 @@ class RealTimeVoiceMonitor:
         print("机器人现在处于持续监听状态，可以随时说话")
         print("按下 Ctrl+C 停止监听")
         # 自动校准环境噪音
-        print("正在进行环境噪音校准...")
         self.auto_calibrate_threshold()
 
         self.is_listening = True

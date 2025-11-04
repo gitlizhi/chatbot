@@ -167,7 +167,7 @@ class MemoryManager:
                         break
         else:
             return []
-        print(f'阿里云百炼API memory={memory}')
+        # print(f'阿里云百炼API memory={memory}')
         return memory
 
     def extract_memory_content(self, text, speaker="user"):
@@ -201,7 +201,7 @@ class MemoryManager:
         """存储记忆到向量数据库"""
         # 确保text是纯文本
         clean_text = self.extract_text_from_asr_result(text)
-        print(f'存储记忆：clean_text={clean_text}')
+        # print(f'存储记忆：clean_text={clean_text}')
         memories = self.extract_memory_content(clean_text, speaker)
 
         for memory in memories:
@@ -219,7 +219,7 @@ class MemoryManager:
                 ids=[memory_id]
             )
 
-            print(f"存储记忆: {memory['content'][:50]}...")
+            # print(f"存储记忆: {memory['content'][:50]}...")
 
         return len(memories)
 
@@ -292,7 +292,7 @@ class MemoryManager:
                 print("无法从查询中提取有效文本")
                 return []
 
-            print(f"检索记忆，查询文本: {query_text}")
+            # print(f"检索记忆，查询文本: {query_text}")
 
             # 第一步：初步检索更多记忆
             initial_results = self.collection.query(
@@ -316,20 +316,20 @@ class MemoryManager:
                     "initial_rank": i + 1  # 记录初始排名
                 })
 
-            print(f"初步检索到 {len(memories)} 条记忆")
-            print(memories)
+            # print(f"初步检索到 {len(memories)} 条记忆")
+
             # 第二步：使用重排序模型重新排序
             if self.reranker_config["enable_reranking"] and len(memories) > 1:
                 memories = self.rerank_memories(query_text, memories)
-                print(f"重排序后选择前 {len(memories)} 条记忆")
+                # print(f"重排序后选择前 {len(memories)} 条记忆")
             else:
                 # 如果没有启用重排序，直接取前n_results个
                 memories = memories[:n_results]
 
             # 显示排序结果
-            for i, memory in enumerate(memories):
-                score_info = f" (分数: {memory.get('relevance_score', 0):.4f})" if 'relevance_score' in memory else ""
-                print(f"记忆 {i + 1}: {memory['content'][:60]}...{score_info}")
+            # for i, memory in enumerate(memories):
+            #     score_info = f" (分数: {memory.get('relevance_score', 0):.4f})" if 'relevance_score' in memory else ""
+            #     print(f"记忆 {i + 1}: {memory['content'][:60]}...{score_info}")
 
             return memories
 
