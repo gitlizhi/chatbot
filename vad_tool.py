@@ -477,6 +477,7 @@ class RealTimeVoiceMonitor:
 
     def status_monitor_thread(self):
         """状态监控线程 - 定期显示系统状态"""
+        tmp_print = ""
         while self.is_listening:
             status_info = {
                 "idle": "🟢 监听中 - 等待语音",
@@ -487,8 +488,10 @@ class RealTimeVoiceMonitor:
 
             status_emoji = status_info.get(self.current_state, "⚪ 未知状态")
             stats_text = f"检测: {self.stats['total_detections']}次, 处理: {self.stats['processed_utterances']}次"
-
-            print(f"\r{status_emoji} | {stats_text} | 按Ctrl+C退出", end="", flush=True)
+            now_print = f"\r{status_emoji} | {stats_text} | 按Ctrl+C退出"
+            if now_print != tmp_print:
+                tmp_print = now_print
+                print(tmp_print, end="\n", flush=True)
             time.sleep(0.5)
 
     def stop_realtime_listening(self):
