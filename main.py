@@ -10,9 +10,7 @@ import time
 from commit import _run_demo
 from memory import MemoryManager
 from vad_tool import WebRTCVADRecorder, RealTimeVoiceMonitor
-from dotenv import load_dotenv
-load_dotenv()
-
+from config import Config
 
 class ElderlyCompanionDemo:
     def __init__(self):
@@ -31,8 +29,8 @@ class ElderlyCompanionDemo:
         # 调用百炼API
         self.client = OpenAI(
             # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx",
-            api_key=os.getenv("DASHSCOPE_API_KEY"),
-            base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+            api_key=Config.API_KEY,
+            base_url=Config.BASE_URL,
         )
 
     def record_audio(self, filename="user_audio.wav"):

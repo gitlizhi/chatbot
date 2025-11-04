@@ -5,18 +5,7 @@ from langchain_openai import OpenAIEmbeddings
 import uuid
 from datetime import datetime
 from chromadb import Documents, EmbeddingFunction, Embeddings
-from dotenv import load_dotenv
-load_dotenv()
-
-
-MODEL_CONFIGS = {
-    "qwen": {
-        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",    # 阿里云百炼
-        "api_key": os.getenv("DASHSCOPE_API_KEY"),
-        "chat_model": "qwen-max",
-        "embedding_model": "text-embedding-v1"
-    }
-}
+from config import Config
 
 
 # 创建一个符合ChromaDB接口的嵌入函数类
@@ -41,12 +30,12 @@ class MemoryManager:
 
         # 加载嵌入模型
         # self.embedding_model = SentenceTransformer('BAAI/bge-small-zh')
-        config = MODEL_CONFIGS["qwen"]
+
         self.embedding_model = OpenAIEmbeddings(
-            base_url=config["base_url"],
-            api_key=config["api_key"],
-            model=config["embedding_model"],
-            deployment=config["embedding_model"],
+            base_url=Config.BASE_URL,
+            api_key=Config.API_KEY,
+            model=Config.EM_MODEL,
+            deployment=Config.EM_MODEL,
             check_embedding_ctx_length=False
         )
 

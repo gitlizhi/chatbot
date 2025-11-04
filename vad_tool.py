@@ -207,8 +207,8 @@ class RealTimeVoiceMonitor:
 
             # 设置阈值为平均值加上2倍标准差
             new_threshold = avg_energy + 2 * std_energy
-            # 确保阈值至少为10
-            new_threshold = max(10, new_threshold) + 100
+            # 确保阈值至少为400
+            new_threshold = max(400, new_threshold)
 
             print(f"环境噪音水平: {avg_energy:.2f} ± {std_energy:.2f}")
             print(f"自动设置静音阈值: {new_threshold:.2f}")
@@ -394,7 +394,7 @@ class RealTimeVoiceMonitor:
                     print(f"AI回复: {response_text}")
 
                     # 文本转语音并播放
-                    print("合成语音...")
+                    # print("合成语音...")
                     response_audio = self.companion.text_to_speech(response_text)
 
                     if response_audio:

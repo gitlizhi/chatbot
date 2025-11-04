@@ -5,15 +5,8 @@ import wave
 from tts_realtime_client import TTSRealtimeClient, SessionMode
 import re
 import pyaudio
-from dotenv import load_dotenv
-load_dotenv()
+from config import Config
 
-# QwenTTS 服务配置
-URL = "wss://dashscope.aliyuncs.com/api-ws/v1/realtime?model=qwen3-tts-flash-realtime"
-API_KEY = os.getenv("DASHSCOPE_API_KEY")
-
-if not API_KEY:
-    raise ValueError("Please set DASHSCOPE_API_KEY environment variable")
 
 # 收集音频数据
 _audio_chunks = []
@@ -49,7 +42,7 @@ def _save_audio_to_file(filename: str = "output.wav", sample_rate: int = 24000) 
 
 async def _user_input_loop(client: TTSRealtimeClient, text: str):
     """持续获取用户输入并发送文本，当用户输入空文本时发送commit事件并结束本次会话"""
-    print("请输入文本（直接按Enter发送commit事件并结束本次会话，按Ctrl+C或Ctrl+D结束整个程序）：")
+    # print("请输入文本（直接按Enter发送commit事件并结束本次会话，按Ctrl+C或Ctrl+D结束整个程序）：")
     text_fragments = re.split(r'[,.;:，。！；]', text)
     for user_text in text_fragments:
         try:
@@ -72,8 +65,8 @@ async def _user_input_loop(client: TTSRealtimeClient, text: str):
 async def _run_demo(text, audio_file):
     """运行完整 Demo"""
     client = TTSRealtimeClient(
-        base_url=URL,
-        api_key=API_KEY,
+        base_url=Config.TTS_URL,
+        api_key=Config.API_KEY,
         voice="Cherry",
         language_type="Chinese",  # 建议与文本语种一致，以获得正确的发音和自然的语调。
         mode=SessionMode.COMMIT,  # 修改为COMMIT模式

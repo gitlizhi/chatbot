@@ -1,5 +1,4 @@
 # -- coding: utf-8 --
-import asyncio
 import websockets
 import json
 import base64
@@ -76,7 +75,7 @@ class TTSRealtimeClient:
     async def send_event(self, event) -> None:
         """发送事件到服务器。"""
         event['event_id'] = "event_" + str(int(time.time() * 1000))
-        print(f"发送事件: type={event['type']}, event_id={event['event_id']}")
+        # print(f"发送事件: type={event['type']}, event_id={event['event_id']}")
         await self.ws.send(json.dumps(event))
 
 
@@ -86,7 +85,7 @@ class TTSRealtimeClient:
             "type": "session.update",
             "session": config
         }
-        print("更新会话配置: ", event)
+        # print("更新会话配置: ", event)
         await self.send_event(event)
 
 
@@ -131,39 +130,45 @@ class TTSRealtimeClient:
                 event_type = event.get("type")
 
                 if event_type != "response.audio.delta":
-                    print(f"收到事件: {event_type}")
-
+                    pass
+                    # print(f"收到事件: {event_type}")
                 if event_type == "error":
-                    print("错误: ", event.get('error', {}))
+                    # print("错误: ", event.get('error', {}))
                     continue
                 elif event_type == "session.created":
-                    print("会话创建，ID: ", event.get('session', {}).get('id'))
+                    pass
+                    # print("会话创建，ID: ", event.get('session', {}).get('id'))
                 elif event_type == "session.updated":
-                    print("会话更新，ID: ", event.get('session', {}).get('id'))
+                    pass
+                    # print("会话更新，ID: ", event.get('session', {}).get('id'))
                 elif event_type == "input_text_buffer.committed":
-                    print("文本缓冲区已提交，项目ID: ", event.get('item_id'))
+                    pass
+                    # print("文本缓冲区已提交，项目ID: ", event.get('item_id'))
                 elif event_type == "input_text_buffer.cleared":
-                    print("文本缓冲区已清除")
+                    pass
+                    # print("文本缓冲区已清除")
                 elif event_type == "response.created":
                     self._current_response_id = event.get("response", {}).get("id")
                     self._is_responding = True
-                    print("响应已创建，ID: ", self._current_response_id)
+                    # print("响应已创建，ID: ", self._current_response_id)
                 elif event_type == "response.output_item.added":
                     self._current_item_id = event.get("item", {}).get("id")
-                    print("输出项已添加，ID: ", self._current_item_id)
+                    # print("输出项已添加，ID: ", self._current_item_id)
                 # 处理音频增量
                 elif event_type == "response.audio.delta" and self.audio_callback:
                     audio_bytes = base64.b64decode(event.get("delta", ""))
                     self.audio_callback(audio_bytes)
                 elif event_type == "response.audio.done":
-                    print("音频生成完成")
+                    pass
+                    # print("音频生成完成")
                 elif event_type == "response.done":
                     self._is_responding = False
                     self._current_response_id = None
                     self._current_item_id = None
-                    print("响应完成")
+                    # print("响应完成")
                 elif event_type == "session.finished":
-                    print("会话已结束")
+                    pass
+                    # print("会话已结束")
 
         except websockets.exceptions.ConnectionClosed:
             print("连接已关闭")
